@@ -8,10 +8,8 @@ public class FollowCam : MonoBehaviour
 	public float movementTime;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-		//this.transform.position = follow.transform.position;
-
 		transform.position = Vector3.Lerp(transform.position, follow.transform.position, Time.deltaTime * movementTime);
 	}
 }

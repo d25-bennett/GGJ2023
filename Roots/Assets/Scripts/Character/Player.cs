@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-	public Camera sceneCam;
-	public float moveSpeed;
+
+	[SerializeField]
+	private Camera sceneCam;
+	[SerializeField]
+	private Rigidbody2D rb;
+
+	[SerializeField]
+	private float moveSpeed;
 	private Vector2 moveDir;
 	private Vector2 mousePos;
-	public Rigidbody2D rb;
 
 	public Weapon weapon;
+	
+	[SerializeField]
+	private int health;
+	[HideInInspector]
+	public int GetHealth() { return health; }
+	private bool damageCooldown;
+	public HealthUI hUI;
 
-	public int health;
 	
 	private void Update()
 	{
@@ -26,6 +37,7 @@ public class Player : MonoBehaviour
 
 	void Inputs()
 	{
+		// Gets input from user
 		float moveX = Input.GetAxisRaw("Horizontal");
 		float moveY = Input.GetAxisRaw("Vertical");
 
@@ -34,6 +46,7 @@ public class Player : MonoBehaviour
 			weapon.Fire();
 		}
 
+		// Takes the inputs and adds it into Vectors
 		moveDir = new Vector2(moveX, moveY).normalized;
 		mousePos = sceneCam.ScreenToWorldPoint(Input.mousePosition);
 	}
@@ -46,6 +59,20 @@ public class Player : MonoBehaviour
 		float aimAngle = Mathf.Atan2(aimDir.y, aimDir.x) * Mathf.Rad2Deg - 90f;
 
 		rb.rotation = aimAngle;
+	}
+
+	//Take Damage
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if(collision.gameObject.tag == "Enemy")
+		{
+			if (!damageCooldown)
+			{
+				health--;
+				hUI.UpdateUIHealth();
+				// Do a loop counting for a timer for i-frames
+			}
+		}
 	}
 
 }

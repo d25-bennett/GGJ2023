@@ -11,7 +11,14 @@ public class Weapon : MonoBehaviour
 	
 	public void Fire()
 	{
-		GameObject projectile = Instantiate(bullet, firePoint.position, firePoint.rotation);
+		//GameObject projectile = Instantiate(bullet, firePoint.position, firePoint.rotation);
+		GameObject projectile = ObjectPool.SharedInstance.GetPooledObject();
+		if (projectile != null)
+		{
+			projectile.transform.position = firePoint.position;
+			projectile.transform.rotation = firePoint.rotation;
+			projectile.SetActive(true);
+		}
 		projectile.GetComponent<Rigidbody2D>().AddForce(firePoint.up * fireForce, ForceMode2D.Impulse);
 	}
 }
