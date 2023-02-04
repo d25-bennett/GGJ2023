@@ -14,7 +14,6 @@ public class Bullet : MonoBehaviour
 				Destroy(gameObject);
 				break;
 			case "Enemy":
-				collision.GetComponent<SpriteRenderer>().color = Color.green;
 				Destroy(gameObject);
 				break;
 			default:
