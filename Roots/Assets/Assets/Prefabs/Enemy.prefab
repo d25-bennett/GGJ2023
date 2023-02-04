@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3231210204977824830}
   - component: {fileID: 3231210204977824829}
   - component: {fileID: 3231210204977824831}
+  - component: {fileID: 7507563602451071747}
   - component: {fileID: 3231210204977824824}
   - component: {fileID: 3231210204977824825}
   m_Layer: 0
@@ -104,6 +105,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!58 &7507563602451071747
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3231210204977824828}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!114 &3231210204977824824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,8 +137,7 @@ MonoBehaviour:
   fireRate: 5
   slowdownDuration: 5
   bulletPrefab: {fileID: 2594367403012496450, guid: 8c62daa8b58d83b4c95db05442f2c63f, type: 3}
-  soundClip: {fileID: 8300000, guid: 06a8fadc068074d48a6aa4b361271fac, type: 3}
-  audioSource: {fileID: 0}
+  fireForce: 0
 --- !u!50 &3231210204977824825
 Rigidbody2D:
   serializedVersion: 4

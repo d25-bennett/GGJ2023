@@ -25,6 +25,8 @@ public class ObjectPool : MonoBehaviour
 			tmp.SetActive(false);
 			pooledObjects.Add(tmp);
 		}
+
+		// Make it so spawned bullets get childed to a GO to stop the Hierarchy being cluttered.
     }
 
 	public GameObject GetPooledObject()
