@@ -8,21 +8,18 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< Updated upstream
   - component: {fileID: 3231210204977824830}
   - component: {fileID: 3231210204977824829}
   - component: {fileID: 3231210204977824831}
   - component: {fileID: 7507563602451071747}
   - component: {fileID: 3231210204977824824}
   - component: {fileID: 3231210204977824825}
-=======
   - component: {fileID: 1012592891874783361}
   - component: {fileID: 1012592891874783362}
   - component: {fileID: 1012592891874783360}
   - component: {fileID: 5398366800593663932}
   - component: {fileID: 1012592891874783367}
   - component: {fileID: 1012592891874783366}
->>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -113,7 +110,6 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.033426687}
   serializedVersion: 2
-<<<<<<< Updated upstream
   m_Radius: 0.5
 --- !u!58 &7507563602451071747
 CircleCollider2D:
@@ -132,7 +128,6 @@ CircleCollider2D:
   serializedVersion: 2
   m_Radius: 0.5
 --- !u!114 &3231210204977824824
-=======
   m_Radius: 0.1991599
 --- !u!58 &5398366800593663932
 CircleCollider2D:
@@ -151,7 +146,6 @@ CircleCollider2D:
   serializedVersion: 2
   m_Radius: 0.21253055
 --- !u!114 &1012592891874783367
->>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,15 +162,12 @@ MonoBehaviour:
   fireRate: 5
   slowdownDuration: 5
   bulletPrefab: {fileID: 2594367403012496450, guid: 8c62daa8b58d83b4c95db05442f2c63f, type: 3}
-<<<<<<< Updated upstream
   soundClip: {fileID: 8300000, guid: 06a8fadc068074d48a6aa4b361271fac, type: 3}
   audioSource: {fileID: 0}
 --- !u!50 &3231210204977824825
-=======
   fireForce: 5
   firePoint: {fileID: 1012592892483693991}
 --- !u!50 &1012592891874783366
->>>>>>> Stashed changes
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0

@@ -25,11 +25,9 @@ public class Player : MonoBehaviour
 	public HealthUI hUI;
 
 	
-=======
 	public float knockbackForce = 5f;
 
-
->>>>>>> Stashed changes
+		
 	private void Update()
 	{
 		Inputs();
