@@ -29,16 +29,19 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1012592891874783363}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 8.403205, y: -0.69959795, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3, y: 3, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1012592892483693991}
   - {fileID: 7071014773569850112}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+<<<<<<< Updated upstream
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!114 &1012592891874783367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,7 +62,6 @@ MonoBehaviour:
   firePoint: {fileID: 1012592892483693991}
   weapon: {fileID: 2147723602374713623}
   vine: {fileID: 5304544225906385902, guid: b750e755d1c31524d9ad779908a6faac, type: 3}
-  ui: {fileID: 0}
 --- !u!114 &1591836809667930063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,6 +131,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+>>>>>>> Stashed changes
 --- !u!212 &1012592891874783362
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -170,10 +173,10 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0ccc508108fa6ed4fa11b4a467d7f609, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 81e6d54558d0fac48aecf820a3c8c96d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 1
+  m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 2.9, y: 2.22}
   m_AdaptiveModeThreshold: 0.5
