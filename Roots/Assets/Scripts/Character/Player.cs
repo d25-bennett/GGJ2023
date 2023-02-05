@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
 
 	private void Start()
 	{
-		hUI = GameObject.FindWithTag("Health").GetComponent<HealthUI>().initUI();
+		//hUI = GameObject.FindWithTag("Health").GetComponent<HealthUI>().initUI();
 	}
 
 	private void Update()
