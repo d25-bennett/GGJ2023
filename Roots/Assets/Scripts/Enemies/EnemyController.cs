@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class EnemyController : MonoBehaviour
 {
@@ -21,17 +22,19 @@ public class EnemyController : MonoBehaviour
 
 	private bool frozen;
 
-	//public AudioClip soundClip;
-	//public AudioSource audioSource;
-
 
 	void Start()
     {
+		ui = GameObject.FindWithTag("Score").GetComponent<ScoreUI>().initUI();
         player = GameObject.FindWithTag("Player").transform;
         rb = this.GetComponent<Rigidbody2D>();
-		//audioSource = GetComponent<AudioSource>();
 		normalSpeed = movespeed;
 		fireRate = Random.Range(1, 5);
+	}
+
+	public void InitUI(ScoreUI newUI)
+	{
+		ui = newUI;
 	}
 
     void Update()

@@ -17,7 +17,13 @@ public class HealthUI : MonoBehaviour
 		health = player.GetHealth();
 		UpdateUIHealth();
 	}
-	
+
+
+	public HealthUI initUI()
+	{
+		return this;
+	}
+
 	public void UpdateUIHealth()
 	{
 		// Uses last known health amount and unactivates them

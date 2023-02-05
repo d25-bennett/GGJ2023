@@ -13,6 +13,10 @@ public class ScoreUI : MonoBehaviour
 
 	public void UpdateScore(int newScore){score += newScore;}
 
+	public ScoreUI initUI()
+	{
+		return this;
+	}
 
 	private void Awake()
 	{

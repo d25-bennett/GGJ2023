@@ -31,8 +31,11 @@ public class Player : MonoBehaviour
 	
 	public float knockbackForce = 5f;
 
+	private void Start()
+	{
+		hUI = GameObject.FindWithTag("Health").GetComponent<HealthUI>().initUI();
+	}
 
-		
 	private void Update()
 	{
 		Inputs();

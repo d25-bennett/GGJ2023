@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Bullet
   - Enemy Bullet
+  - Score
+  - Health
   layers:
   - Default
   - TransparentFX
