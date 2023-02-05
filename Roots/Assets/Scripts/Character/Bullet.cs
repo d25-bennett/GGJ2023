@@ -15,7 +15,6 @@ public class Bullet : MonoBehaviour
 				break;
 			case "Enemy":
 				collision.GetComponent<SpriteRenderer>().color = Color.green;
-				// Trap enemy flag here
 				gameObject.SetActive(false);
 				break;
 			default:
