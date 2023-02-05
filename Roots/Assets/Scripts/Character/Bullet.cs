@@ -17,6 +17,9 @@ public class Bullet : MonoBehaviour
 				collision.GetComponent<SpriteRenderer>().color = Color.green;
 				gameObject.SetActive(false);
 				break;
+			case "Player":
+				gameObject.SetActive(false);
+				break;
 			default:
 				break;
 		}
