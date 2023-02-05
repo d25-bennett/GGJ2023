@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 Base path: 'C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
 
@@ -12,10 +13,15 @@ Unhandled exception: Protocol error - failed to read magic number (error -214748
 
 Quitting shader compiler process
 =======
+=======
+>>>>>>> Stashed changes
 Base path: 'C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
 
 Unhandled exception: Protocol error - failed to read magic number (error -2147483644, transferred 0/4)
 
 Quitting shader compiler process
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
