@@ -182,7 +182,6 @@ GameObject:
   - component: {fileID: 9014631234995714086}
   - component: {fileID: 9014631234995714085}
   - component: {fileID: 9014631234995714084}
-  - component: {fileID: 9014631234995714104}
   m_Layer: 5
   m_Name: Canvas - UI
   m_TagString: Untagged
@@ -277,24 +276,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &9014631234995714104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9014631234995714083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6f77d8a4703db54fb0aa15bb29c9089, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  healthImages:
-  - {fileID: 9014631235767106392}
-  - {fileID: 9014631235318997345}
-  - {fileID: 9014631234034108229}
-  - {fileID: 9014631235944279241}
 --- !u!1 &9014631235318997345
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,10 +361,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9014631235412864014}
+  - component: {fileID: 565523563157596487}
   - component: {fileID: 9014631235412864000}
   - component: {fileID: 9014631235412864015}
   m_Layer: 5
-  m_Name: Health
+  m_Name: Health UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -409,6 +391,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0.00012207031, y: 0}
   m_SizeDelta: {x: 180.1878, y: 65.319214}
   m_Pivot: {x: 0, y: 1}
+--- !u!114 &565523563157596487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9014631235412864013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6f77d8a4703db54fb0aa15bb29c9089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  healthImages:
+  - {fileID: 9014631235767106392}
+  - {fileID: 9014631235318997345}
+  - {fileID: 9014631234034108229}
+  - {fileID: 9014631235944279241}
 --- !u!222 &9014631235412864000
 CanvasRenderer:
   m_ObjectHideFlags: 0

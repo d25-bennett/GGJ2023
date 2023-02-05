@@ -6,11 +6,8 @@ public class EnemyController : MonoBehaviour
 {
     public float movespeed = 1f;
     private float normalSpeed;
-    public float bulletpeed = 5f;
     public float fireRate = 1f;
     public float slowdownDuration = 5.0f;
-    public GameObject bulletPrefab;
-    public Transform firePoint;
 
     private Transform player;
     private float nextFire = 0f;  
@@ -44,7 +41,7 @@ public class EnemyController : MonoBehaviour
 			Vector3 direction = player.position - transform.position;
 
 			float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-			rb.rotation = angle + 90; //TODO Bad fix, but it works for now.
+			rb.rotation = angle; //TODO Bad fix, but it works for now.
 			direction.Normalize();
 			movement = direction;
 
@@ -102,7 +99,7 @@ public class EnemyController : MonoBehaviour
 		Destroy(newVine);
 		// Unfreezes enemy
 		movespeed = normalSpeed;
-        GetComponent<SpriteRenderer>().color = Color.red;
+        GetComponent<SpriteRenderer>().color = Color.white;
 		frozen = false;
     }
 

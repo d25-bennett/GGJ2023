@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
 	
 	public float knockbackForce = 5f;
 
+
 		
 	private void Update()
 	{
@@ -70,7 +71,7 @@ public class Player : MonoBehaviour
 		rb.velocity = new Vector2(moveDir.x * moveSpeed, moveDir.y * moveSpeed);
 
 		Vector2 aimDir = mousePos - rb.position;
-		float aimAngle = Mathf.Atan2(aimDir.y, aimDir.x) * Mathf.Rad2Deg - 90f;
+		float aimAngle = Mathf.Atan2(aimDir.y, aimDir.x) * Mathf.Rad2Deg;
 
 		rb.rotation = aimAngle;
 	}
