@@ -59,6 +59,7 @@ MonoBehaviour:
   firePoint: {fileID: 1012592892483693991}
   weapon: {fileID: 2147723602374713623}
   vine: {fileID: 5304544225906385902, guid: b750e755d1c31524d9ad779908a6faac, type: 3}
+  ui: {fileID: 0}
 --- !u!114 &1591836809667930063
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -20,6 +20,7 @@ public class EnemyController : MonoBehaviour
 	[SerializeField]
 	private GameObject vine;
 	private GameObject newVine;
+	public ScoreUI ui;
 
 	private bool frozen;
 
@@ -33,8 +34,8 @@ public class EnemyController : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();
 		//audioSource = GetComponent<AudioSource>();
 		normalSpeed = movespeed;
-
-    }
+		fireRate = Random.Range(1, 5);
+	}
 
     void Update()
     {
@@ -51,6 +52,7 @@ public class EnemyController : MonoBehaviour
 			{
 				nextFire = Time.time + fireRate;
 				Shoot(direction);
+				fireRate = Random.Range(1, 5);
 			}
 		}
     }
@@ -77,7 +79,8 @@ public class EnemyController : MonoBehaviour
                 break;
             case "Enemy Bullet":
                 Debug.Log("Hit by enemy bullet");
-                Destroy(gameObject);
+				ui.UpdateScore(100);
+				Destroy(gameObject);
                 break;
             default:
                 break;
