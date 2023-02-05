@@ -16,6 +16,9 @@ public class Bullet : MonoBehaviour
 			case "Enemy":
 				Destroy(gameObject);
 				break;
+			case "Player":
+				gameObject.SetActive(false);
+				break;
 			default:
 				break;
 		}

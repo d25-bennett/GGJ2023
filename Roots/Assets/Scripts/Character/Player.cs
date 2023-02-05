@@ -12,8 +12,14 @@ public class Player : MonoBehaviour
 
 	public Weapon weapon;
 
+<<<<<<< Updated upstream
 	public int health;
 	
+=======
+	public float knockbackForce = 5f;
+
+
+>>>>>>> Stashed changes
 	private void Update()
 	{
 		Inputs();
@@ -48,4 +54,29 @@ public class Player : MonoBehaviour
 		rb.rotation = aimAngle;
 	}
 
+<<<<<<< Updated upstream
+=======
+	//Take Damage
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if((collision.gameObject.tag == "Enemy") || (collision.gameObject.tag == "EnemyBullet"))
+		{
+			Debug.Log("Player Collision");
+			if (!damageCooldown)
+			{
+				health--;
+				hUI.UpdateUIHealth();
+				// Do a loop counting for a timer for i-frames
+				//Knockback
+				/*Rigidbody2D playerRb = GetComponent<Rigidbody2D>();
+				if (playerRb != null)
+				{
+					Vector2 knockbackDirection = (playerRb.position - (Vector2)GetComponent<Collider>().transform.position).normalized;
+					playerRb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+				}*/
+			}
+		}
+	}
+
+>>>>>>> Stashed changes
 }

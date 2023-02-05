@@ -5,16 +5,21 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public float movespeed = 5f;
+    public float bulletpeed = 5f;
     public float fireRate = 1f;
     public float slowdownDuration = 5.0f;
     public GameObject bulletPrefab;
+    public float fireForce;
+    public Transform firePoint;
+
     private Transform player;
-    private float nextFire = 0f;
+    private float nextFire = 0f;  
     private Rigidbody2D rb;
     private Vector2 movement;
+
     //public AudioClip soundClip;
     //public AudioSource audioSource;
-    public float fireForce;
+
 
     void Start()
     {
@@ -27,10 +32,12 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         Vector3 direction = player.position - transform.position;
+        
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        rb.rotation = angle;
+        rb.rotation = angle + 90; //TODO Bad fix, but it works for now.
         direction.Normalize();
         movement = direction;
+
         //Debug.Log(direction);
         //transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
 
@@ -60,6 +67,7 @@ public class EnemyController : MonoBehaviour
                 break;
             case "EnemyBullet":
                 Destroy(gameObject);
+                Debug.Log("Hit by enemy bullet");
                 break;
             default:
                 break;
@@ -81,13 +89,23 @@ public class EnemyController : MonoBehaviour
         //rb.velocity = rb.velocity.normalized * originalSpeed;
     }
 
-    void Shoot(Vector3 firePoint)
+    public void Shoot(Vector3 target)
     {
-        //GameObject projectile = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        //projectile.GetComponent<Rigidbody2D>().AddForce(firePoint.up * fireForce, ForceMode2D.Impulse);
-        //Instantiate(bulletPrefab, transform.position, transform.rotation);
-        //audioSource.clip = soundClip;
-        //audioSource.Play();
+		GameObject projectile = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+		//GameObject projectile = ObjectPool.SharedInstance.GetPooledObject();
+		if (projectile != null)
+		{
+			projectile.transform.position = firePoint.position;
+			projectile.transform.rotation = firePoint.rotation;
+			projectile.SetActive(true);
+		}
+		projectile.GetComponent<Rigidbody2D>().AddForce(firePoint.up * fireForce, ForceMode2D.Impulse);
+
+        /*GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        Vector2 direction = (target - transform.position).normalized;
+        rb.velocity = direction * bulletpeed;*/
+        Debug.Log("Shoot");
     }
 }
 
