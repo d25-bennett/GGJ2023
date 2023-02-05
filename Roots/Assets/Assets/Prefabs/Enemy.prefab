@@ -38,9 +38,7 @@ Transform:
   - {fileID: 7071014773569850112}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-<<<<<<< Updated upstream
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-=======
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!114 &1012592891874783367
 MonoBehaviour:
@@ -131,7 +129,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
->>>>>>> Stashed changes
 --- !u!212 &1012592891874783362
 SpriteRenderer:
   m_ObjectHideFlags: 0
