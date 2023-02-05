@@ -136,7 +136,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &4098194539957017441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,7 +154,9 @@ MonoBehaviour:
   moveSpeed: 5
   weapon: {fileID: 4098194540075779369}
   health: 4
+  damageCooldown: 0
   hUI: {fileID: 0}
+  knockbackForce: 5
 --- !u!114 &4098194539957017452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,7 +164,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4098194539957017442}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d20da5ffa31ff3438982e511830c467, type: 3}
   m_Name: 
@@ -170,6 +172,7 @@ MonoBehaviour:
   pooledObjects: []
   objectToPool: {fileID: 2594367403012496450, guid: 9f0b4c621667cda4a9a8bd2774a7cdf5, type: 3}
   amountToPool: 20
+  weapon: {fileID: 0}
 --- !u!1 &4098194540075779371
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,6 +184,7 @@ GameObject:
   - component: {fileID: 4098194540075779370}
   - component: {fileID: 4098194540075779368}
   - component: {fileID: 4098194540075779369}
+  - component: {fileID: 1538504448}
   m_Layer: 0
   m_Name: Staff
   m_TagString: Untagged
@@ -270,7 +274,105 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 2594367403012496450, guid: 9f0b4c621667cda4a9a8bd2774a7cdf5, type: 3}
   firePoint: {fileID: 4098194540264735504}
+  audioData: {fileID: 0}
+  pew: {fileID: 8300000, guid: 06a8fadc068074d48a6aa4b361271fac, type: 3}
   fireForce: 5
+--- !u!82 &1538504448
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4098194540075779371}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &4098194540264735505
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,7 +385,7 @@ GameObject:
   m_Layer: 0
   m_Name: firePoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -314,7 +416,7 @@ GameObject:
   m_Layer: 0
   m_Name: FollowPoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

@@ -9,6 +9,8 @@ public class ObjectPool : MonoBehaviour
 	public GameObject objectToPool;
 	public int amountToPool;
 
+	public Weapon weapon;
+
 	private void Awake()
 	{
 		SharedInstance = this;

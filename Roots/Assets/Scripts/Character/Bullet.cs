@@ -11,14 +11,14 @@ public class Bullet : MonoBehaviour
 		switch (collision.gameObject.tag)
 		{
 			case "Terrain":
-				gameObject.SetActive(false);
+				//gameObject.SetActive(false);
+				Destroy(gameObject);
 				break;
 			case "Enemy":
-				collision.GetComponent<SpriteRenderer>().color = Color.green;
-				gameObject.SetActive(false);
+				Destroy(gameObject);
 				break;
 			case "Player":
-				gameObject.SetActive(false);
+				Destroy(gameObject);
 				break;
 			default:
 				break;

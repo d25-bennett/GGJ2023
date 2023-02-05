@@ -21,8 +21,12 @@ public class Player : MonoBehaviour
 	private int health;
 	[HideInInspector]
 	public int GetHealth() { return health; }
-	private bool damageCooldown;
+	[SerializeField]
+	private bool damageCooldown = false;
 	public HealthUI hUI;
+
+	public AudioSource audio;
+	public AudioClip damage;
 
 	
 	public float knockbackForce = 5f;
@@ -54,6 +58,13 @@ public class Player : MonoBehaviour
 		mousePos = sceneCam.ScreenToWorldPoint(Input.mousePosition);
 	}
 
+	// Grabs enemy GO to then only move around them?
+	//GameObject currentEnemy;
+	//void GetEnemyID(GameObject enemy)
+	//{
+	//	currentEnemy = enemy;
+	//}
+
 	void Move()
 	{
 		rb.velocity = new Vector2(moveDir.x * moveSpeed, moveDir.y * moveSpeed);
@@ -67,7 +78,7 @@ public class Player : MonoBehaviour
 	//Take Damage
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if(collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Bullet")
+		if(collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Enemy Bullet")
 		{
 			if (!damageCooldown)
 			{
@@ -78,9 +89,9 @@ public class Player : MonoBehaviour
 					// UI game over screen
 					Destroy(this);
 				}
-
-				// Do a loop counting for a timer for i-frames
+				audio.PlayOneShot(damage);
 			}
+			StartCoroutine(Iframes());
 		}
 		if (collision.gameObject.tag == "Health")
 		{
@@ -90,6 +101,14 @@ public class Player : MonoBehaviour
 		{
 			// TODO: Implement xp system?
 		}
+	}
+	
+
+	private IEnumerator Iframes()
+	{
+		damageCooldown = true;
+		yield return new WaitForSeconds(1);
+		damageCooldown = false;
 	}
 
 }
